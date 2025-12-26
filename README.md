@@ -1,101 +1,121 @@
 FACED App
 Fair AI-Assisted Controlled Exam Delivery
 📌 Project Overview
-FACED App is a web-based remote exam integrity system designed to support fair and reliable online examinations, especially in low-bandwidth and unstable network conditions.
-Unlike traditional online proctoring tools that rely on aggressive surveillance and automated cheating accusations, FACED App follows a human-in-the-loop approach.
-The system records verifiable exam integrity events and presents them transparently to teachers, while final decisions are always made by humans, not AI.
-AI assists. Humans decide.
+FACED App is a web-based exam integrity monitoring prototype designed to support fair, ethical, and low-bandwidth online examinations.
+Unlike traditional proctoring systems that rely on constant surveillance and automated cheating accusations, FACED App follows a human-in-the-loop approach.
+The system records objective exam-related events and presents them for instructor review, while final decisions remain with humans — not AI.
+AI assists monitoring. Humans decide outcomes.
 
 ❓ Problem Statement
 Most existing online exam monitoring solutions suffer from:
-High false positives
-Over-surveillance and privacy violations
-Heavy bandwidth usage
-Automated judgments without context
-Poor performance in rural or low-network regions
-Students are often penalized for technical issues rather than actual malpractice, leading to distrust and stress.
-There is a need for an ethical, lightweight, and deployable exam integrity system that works in real-world conditions.
+Excessive surveillance and privacy concerns
+High false-positive cheating accusations
+Heavy bandwidth consumption
+Automated judgments without human context
+Poor usability in low-network or rural environments
+Students are often penalized due to system behavior rather than actual malpractice.
+There is a strong need for a lightweight, ethical, and deployable exam monitoring system that works in real-world conditions.
 
 💡 Solution Approach
-FACED App adopts an event-based integrity model instead of behavioral judgment.
-Core principles:
-No automatic cheating accusations
-Only factual system events are logged
-Teachers retain full authority
+FACED App uses an event-based monitoring model instead of behavioral or emotion-based judgment.
+Core Design Principles
+No automatic cheating decisions
+Only factual system events are recorded
+Human reviewers make final decisions
 Privacy-first and low-bandwidth friendly
-The system records objective, timestamped events such as:
-Identity verification status
-App focus loss / tab switching
-Exam pause and resume
-Network interruptions
-Exam start and submission
-These events are shown as a clear timeline to instructors for transparent review.
+Logged Events (MVP)
+Keystroke activity (for behavioral analysis experiments)
+Snapshot captures (on specific triggers)
+Timestamped logs for review
+All recorded data is stored locally and intended for controlled instructor review only.
 
-⭐ Key Features
-Web-based exam interface (HTML, CSS, JavaScript)
-Identity verification using face recognition (entry & re-entry only)
-Tab switching / focus loss detection
-Automatic exam pause and lock on focus loss
-Offline-tolerant exam flow
-Event logging for exam integrity
-Teacher-controlled resume or termination
-Minimal data collection and privacy-first design
+⭐ Key Features (MVP)
+Web-based exam interface
+Lightweight Express.js backend
+Keystroke logging via REST API
+Snapshot image capture and storage
+Static frontend serving
+Local file-based logging
+Designed for low-bandwidth environments
+No continuous video or audio recording
 🚫 What the System Does NOT Do
 ❌ No emotion detection
-❌ No eye-tracking or gaze analysis
-❌ No room or background monitoring
-❌ No continuous video/audio recording
+❌ No eye tracking or gaze analysis
+❌ No background or room monitoring
+❌ No continuous webcam or microphone recording
 ❌ No automated cheating verdicts
-This avoids ethical risks, false accusations, and psychological stress.
-
-🛠️ Technology Stack (MVP – Current Implementation)
+This design avoids ethical risks, false accusations, and psychological stress.
+🛠️ Technology Stack (Current MVP)
 Frontend
 HTML
 CSS
 JavaScript
 Backend
-Python
-Flask (REST APIs for exam flow, event logging, and instructor actions)
-Database
-SQLite (used for MVP and local persistence)
-AI / Logic Used
-Face recognition for identity verification only
-Rule-based logic for exam state and tab-switch detection
-(AI assists monitoring; it does not make decisions)
-
-Deployment (MVP)
-Local / test  server
+Node.js
+Express.js
+Storage
+File-based storage (logs and snapshots)
+AI / Logic
+Event logging only (AI-assisted analysis planned for future versions)
 📱 Application Type
 ✅ Web Application
-(Designed to be lightweight and accessible even under low-bandwidth conditions. Mobile and Android app versions are planned as future enhancements.)
-http://localhost:3000
+Runs locally in a browser and is designed to be lightweight and accessible even under low-bandwidth conditions.
 
-Demo Video
-📽️ Demo Video link
-https://drive.google.com/file/d/1cFYwj5yQpYwlVRPzGHf89_YBIznrowJV/view?usp=drivesdk
+▶️ How to Run the Project
+Prerequisites
+Node.js installed
+Steps
+Copy code
+Bash
+git clone https://github.com/saravanabalajisciet-crypto/FACED-APP.git
+cd FACED-APP
+npm install
+node server.js
+Open your browser and visit:
+Copy code
+
+http://localhost:3000
+📂 Project Structure
+Copy code
+
+FACED-APP/
+├── README.md
+├── package.json
+├── package-lock.json
+├── server.js
+├── public/
+│   ├── index.html
+│   ├── css/
+│   ├── js/
+│   └── models/
+├── logs/
+│   └── keystrokes.txt
+└── snapshots/
+🎥 Demo Video
+📽️ Demo Video (Google Drive)
+👉 https://drive.google.com/file/d/1cFYwj5yQpYwIVRPzGHf89_YBlznrowJV/view?usp=drivesdk
 
 ⚖️ Ethical Design Note
 FACED App is intentionally designed not to detect or declare cheating automatically.
 The system:
-Preserves exam integrity evidence
-Prevents uncontrolled exam continuation
-Ensures transparency
-Respects student privacy
+Collects objective activity data
+Preserves transparency
+Avoids invasive surveillance
+Keeps humans in control of decisions
 This approach reduces legal, ethical, and institutional risks while improving trust.
+
 🚀 Future Scope
-Android mobile application
-Teacher dashboards with analytics
-Multi-exam and institution support
-Secure audit exports
-Cloud-scale deployment
-Compliance tooling for universities
+AI-assisted anomaly analysis (human-reviewed)
+Instructor dashboards
+Secure audit logs
+Offline-first enhancements
+Mobile and Android versions
+Cloud deployment support
 
 👤 Author
 Saravana Balaji
 Coimbatore Institute of Engineering and Technology
-
 🧠 Final Note
-FACED App prioritizes reliability, fairness, and human judgment over aggressive AI enforcement.
-It is designed to work in real-world conditions—not ideal ones.
-
+FACED App prioritizes fairness, transparency, and real-world usability over aggressive AI enforcement.
+It is built to work in practical conditions — not ideal ones.
 
