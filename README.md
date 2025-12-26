@@ -71,8 +71,8 @@ Local / test  server
 http://localhost:3000
 
 Demo Video
-📽️ Demo Video Link:
-👉 https://drive.google.com/file/d/1cFYwj5yQpYwlVRPzGHf89_YBIznrowJV/view?usp=drivesdk
+📽️ Demo Video link
+https://drive.google.com/file/d/1cFYwj5yQpYwlVRPzGHf89_YBIznrowJV/view?usp=drivesdk
 
 ⚖️ Ethical Design Note
 FACED App is intentionally designed not to detect or declare cheating automatically.
